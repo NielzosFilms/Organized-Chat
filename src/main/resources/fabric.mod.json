@@ -1,0 +1,53 @@
+{
+	"schemaVersion": 1,
+	"id": "organized-chat",
+	"version": "1.0.0",
+	"name": "Organized Chat",
+	"description": "This is a mod that groups chat messages together into tabs.",
+	"authors": [
+		"NielzosFilms"
+	],
+	"contact": {
+		"homepage": "https://github.com/NielzosFilms",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/organized-chat/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			{
+				"value": "com.nielzosfilms.OrganizedChat",
+				"adapter": "kotlin"
+			}
+		],
+		"client": [
+			{
+				"value": "com.nielzosfilms.OrganizedChatClient",
+				"adapter": "kotlin"
+			}
+		],
+		"modmenu": [
+			"com.nielzosfilms.OrganizedChatModMenuIntegration"
+		]
+	},
+	"mixins": [
+		"organized-chat.mixins.json",
+		{
+			"config": "organized-chat.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.14.23",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*",
+		"fabric-language-kotlin": ">=1.9.10",
+		"cloth-config": ">=11.1.106",
+		"modmenu": ">=7.1.0"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
